@@ -57,15 +57,7 @@ To start the container with the default configuration:
 invoke up
 ```
 
-This command will run the container in detached mode, exposing port 5000, and start an Ansible rulebook session using the files in the container/eda directory.
-
-## Stopping the Container
-
-To stop and remove the running container:
-
-```bash
-invoke down
-```
+This command will run the container in detached mode, exposing port 5000, and start an Ansible rulebook session using the files in the `eda/` directory as a volume mount.
 
 ## Viewing Logs
 
@@ -75,9 +67,17 @@ To tail the container logs:
 invoke logs
 ```
 
+## Stopping the Container
+
+To stop and remove the running container:
+
+```bash
+invoke down
+```
+
 ## Customization
 
-This Dockerfile and Ansible setup are designed to be flexible. You can modify the container/eda directory with your own Ansible playbooks and rulebooks. Additionally, the Dockerfile can be adjusted to include different or additional Ansible collections and Python dependencies as needed.
+This Dockerfile and Ansible setup are designed to be flexible. You can modify the `eda/` directory with your own Ansible playbooks and rulebooks. Additionally, the Dockerfile can be adjusted to include different or additional Ansible collections and Python dependencies as needed.
 
 ## Contributions
 
@@ -85,4 +85,4 @@ Contributions are welcome! Please submit a pull request or open an issue if you 
 
 ## License
 
-This project is open-source and available under [specify your license].
+This project is open-source and available under [Apache License 2.0](LICENSE).
