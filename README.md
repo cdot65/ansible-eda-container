@@ -29,10 +29,24 @@ If you're opposed to using an external Python package to handle bash commands, I
 
 ### Using Invoke
 
-First, ensure you have Invoke installed via Poetry:
+First, ensure you have Invoke installed.
+
+If you already use Poetry to manage your virtual environments:
 
 ```bash
 poetry install
+```
+
+If you prefer to use pip w/requirements.txt in your own virtual environment:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+via pip:
+
+```bash
+pip3 install invoke
 ```
 
 Then, use the following command to build the image:
