@@ -43,13 +43,7 @@ If you prefer to use pip w/requirements.txt in your own virtual environment:
 pip3 install -r requirements.txt
 ```
 
-via pip:
-
-```bash
-pip3 install invoke
-```
-
-Then, use the following command to build the image:
+After `invoke` is installed, use the following command to build the image:
 
 ```bash
 invoke build
