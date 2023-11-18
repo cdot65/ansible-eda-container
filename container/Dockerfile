@@ -21,6 +21,3 @@ RUN ansible-galaxy collection install paloaltonetworks.panos
 
 # Set working directory
 WORKDIR /ansible
-
-# Copy Ansible EDA project files
-COPY eda /ansible/eda

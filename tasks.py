@@ -76,16 +76,17 @@ def up(context):
     This command will run a new container that exposes port 5000 and runs the
     ansible-rulebook command with the rulebook and inventory specified:
 
-        podman run -d -p 5000:5000 --name eda ghcr.io/cdot65/ansible-eda \
-            ansible-rulebook --rulebook=eda/rulebooks/example.yaml \
-            -i eda/inventory/inventory.yaml --verbose
+        podman run -d -p 5000:5000 --name eda \
+        -v $(pwd)/eda:/ansible/eda ghcr.io/cdot65/ansible-eda \
+        ansible-rulebook --rulebook=eda/rulebooks/example.yaml \
+        -i eda/inventory/inventory.yaml --verbose
 
     You will be presented with the container ID. You can then tail the logs.
     """
     container_cmd = get_container_cmd()
     run_cmd = f"""
         {container_cmd} run -d -p 5000:5000 --name eda \
-        {CONTAINER_IMG}:{CONTAINER_TAG} \
+        -v $(pwd)/eda:/ansible/eda {CONTAINER_IMG}:{CONTAINER_TAG} \
         ansible-rulebook --rulebook=eda/rulebooks/example.yaml \
         -i eda/inventory/inventory.yaml --verbose
         """
