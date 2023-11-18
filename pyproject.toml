@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ansible_eda_container"
+version = "0.0.1"
+description = "Build and execute Ansible EDA container images"
+authors = ["Calvin Remsburg"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+invoke = "^2.2.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+flake8 = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

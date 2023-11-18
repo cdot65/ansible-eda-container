@@ -1,0 +1,16 @@
+- name: "Receive logs sourced from HTTP Server Profile in PAN-OS"
+  hosts: "localhost"
+
+  sources:
+  - paloaltonetworks.panos.logs:
+      host: 0.0.0.0
+      port: 5000
+      type: decryption
+
+  rules:
+  - name: "Troubleshoot Decryption Failure"
+    condition: event.meta.log_type == "decryption"
+
+    action:
+      run_playbook:
+        name: "playbooks/decryption_example.yaml"
