@@ -1,12 +1,12 @@
-# Ansible EDA Docker Container
+# Ansible EDA Container
 
-Welcome to the Ansible EDA Docker Container project! This repository provides a Dockerfile and Invoke tasks to build and manage a Docker container image, specially designed for running Ansible rulebooks. This project is ideal for those who want to experiment with Ansible in a containerized environment, especially with Palo Alto Networks collections and dependencies.
+Welcome to the Ansible EDA Container project! This repository provides a Dockerfile and Invoke tasks to build and manage a container image, specially designed for running Ansible rulebooks. This project is ideal for those who want to experiment with Ansible in a containerized environment, especially with Palo Alto Networks collections and dependencies.
 
 ## Features
 
 - Fedora-based Container: Utilizes the latest Fedora image for a robust and up-to-date environment.
 - Preconfigured Ansible Environment: Includes Ansible, ansible-runner, and ansible-rulebook, ready for your playbooks and rulebooks.
-- Palo Alto Networks Collection Preinstalled: Comes with the Palo Alto Networks collection for those working in network security.
+- Palo Alto Networks Collection Preinstalled: Comes with the Palo Alto Networks collection as an example project for those working in network security.
 - Easy Management with Invoke: Includes Invoke tasks for straightforward container lifecycle management (build, up, down, logs).
 
 ## Getting Started
@@ -23,17 +23,9 @@ You can build the container image either manually using Docker/Podman commands o
 
 ### Manual Build
 
-Run the following command in the directory containing the Dockerfile:
+I *highly* recommend using `invoke` library to handle the container commands, they can become extensive down the road.
 
-```bash
-docker build -t your-tag-name ./container
-```
-
-or for Podman:
-
-```bash
-podman build -t your-tag-name ./container
-```
+If you're opposed to using an external Python package to handle bash commands, I get it, but please refer to the `tasks.py` file to find the appropriate commands for building and running the container.
 
 ### Using Invoke
 
